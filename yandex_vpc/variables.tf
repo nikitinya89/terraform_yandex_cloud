@@ -28,3 +28,9 @@ variable "vpc_gateway" {
   type = string
   default = "ya-gateway"
 }
+
+variable "vpc_route_table_name" {
+  description = "VPC route table name"
+  type = string
+  default = "ya-route-table"
+}
