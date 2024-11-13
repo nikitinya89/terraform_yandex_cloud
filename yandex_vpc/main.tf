@@ -18,6 +18,7 @@ resource "yandex_vpc_route_table" "route_table" {
   name = var.vpc_route_table_name
   network_id = yandex_vpc_network.vpc_network.id
   static_route {
+    destination_prefix = "0.0.0.0/0"
     gateway_id = yandex_vpc_gateway.vpc_gateway.id
   }
 }
