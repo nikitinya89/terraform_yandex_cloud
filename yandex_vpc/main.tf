@@ -7,6 +7,7 @@ resource "yandex_vpc_subnet" "vpc_subnet" {
   zone           = var.zone
   network_id     = yandex_vpc_network.vpc_network.id
   v4_cidr_blocks = var.v4_cidr_blocks
+  route_table_id = yandex_vpc_route_table.route_table.id
 }
 
 resource "yandex_vpc_gateway" "vpc_gateway" {
