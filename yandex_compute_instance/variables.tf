@@ -77,3 +77,9 @@ variable "user_name" {
 variable "public_key" {
   description = "SSH public key for user"
 }
+
+variable "image_id" {
+  description = "Image ID for instance"
+  type        = string
+  default     = null
+}

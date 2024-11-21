@@ -1,10 +1,14 @@
+locals {
+  final_image_id = var.image_id != null ? var.image_id : data.yandex_compute_image.ubuntu_latest.id
+}
+
 data "yandex_compute_image" "ubuntu_latest" {
   family = "ubuntu-2204-lts"
 }
 
 resource "yandex_compute_disk" "disk" {
   name     = "${var.prefix}-${var.vm_name}-disk"
-  image_id = data.yandex_compute_image.ubuntu_latest.image_id
+  image_id = local.final_image_id
   zone     = var.zone
   size     = var.disk_size
   type     = var.disk_type
